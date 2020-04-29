@@ -55,7 +55,7 @@ my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="", Repo = TRUE, 
     my_path <- paste(Path,Extra_Path,Name,sep="/")
     # Fix any double // in the path
     my_path <- gsub("//","/",my_path)
-    if(str_detect(Name,".xlsx") == TRUE){
+    if(stringr::str_detect(Name,".xlsx") == TRUE){
       my_path <- readxl::read_excel(my_path)
     }else{
       my_path <- data.table::fread(my_path, header=header)

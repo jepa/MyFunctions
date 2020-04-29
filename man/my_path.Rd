@@ -5,7 +5,7 @@
 \title{Load and installs packages needed}
 \usage{
 my_path(Path_Type, Project = NA, Extra_Path = "", Name = "",
-  Repo = NA, Option = "P")
+  Repo = TRUE, Read = FALSE, header = TRUE)
 }
 \arguments{
 \item{Path_Type}{Type of path needed "D" for Data, "R", for Result and "G" for generic. You need those paths to be load in the global environment}
@@ -16,9 +16,9 @@ my_path(Path_Type, Project = NA, Extra_Path = "", Name = "",
 
 \item{Name}{Dataset name in case you want the option to load data}
 
-\item{Repo}{Normally set to jepa88 but if connection to Drobo is availbale use Repo = "Drobo"}
+\item{Repo}{Normally set to jepa88 but if connection to Drobo is availbale use Repo = "FALSE"}
 
-\item{Option}{There are three options; RT reads a .txt file, RC reads a .csv file and P set the path. Default P}
+\item{Read}{Default Read = FALSE. Read = FALSE will only return a path wile Read = TURE will read a dataset}
 }
 \value{
 Paths to save and load data within a project
