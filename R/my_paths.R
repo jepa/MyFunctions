@@ -52,15 +52,13 @@ my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="", Repo = TRUE, 
   
   # Final path
   
-  if(Option == "Read"){
+  if(Read == TRUE){
     
     my_path <- paste(Path,Extra_Path,Name,sep="/")
     my_path <- gsub("//","/",my_path)
     my_path <- data.table::fread(my_path, header=header)
     # my_path <- readr::read_csv(my_path)
-    
   }else{
-    
     my_path <- paste(Path,Extra_Path,"",sep="/")
     # Fix any double // in the path
     my_path<- gsub("//","/",my_path) 
