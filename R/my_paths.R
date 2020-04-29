@@ -13,9 +13,9 @@ my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="",Repo = NA){
   
   # Main path where I store my data
   if(is.na(Repo) == TRUE){
-    Main_Path <- "~/Volumes/jepa88/Data" # jepa88 (pre-selected)
+    Main_Path <- "/Volumes/jepa88/Data" # jepa88 (pre-selected)
   }else{
-    Main_Path <- "~Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
+    Main_Path <- "Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
   }
   
   # Automatically sets the project name
