@@ -5,19 +5,27 @@
 #' and the it will load the recently installed package
 #'
 #' @param Path_Type Type of path needed "D" for Data, "R", for Result and "G" for generic. You need those paths to be load in the global environment
-#' @param Project I normally call my data folder the same as the projec so it automatically sets to the project name. Alternatives available.
+#' @param Project I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.
 #' @param Extra_Path Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. Project/SubFolder -
 #' @return Paths to save and load data within a project
 #' @export
-my_path <- function(Path_Type,Project="NA",Extra_Path="",Name =""){
+my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="",Repo = NA){
   
-  Main_Path <- "~/Volumes/jepa88/Data"
-  if(is.na(Project) == TRUE){
-  Project <- basename(getwd())}
-  else{
-    Project <- Project
+  # Main path where I store my data
+  if(is.na(Repo) == TRUE){
+    Main_Path <- "~/Volumes/jepa88/Data" # jepa88 (pre-selected)
+  }else{
+    Main_Path <- "~Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
   }
   
+  # Automatically sets the project name
+  if(is.na(Project) == TRUE){
+    Project <- basename(getwd())}
+  else{
+    Project <- Project # If another path is needed
+  }
+  
+  # Set Project Data, Generic Data, Results and Figures paths
   if(Path_Type == "R" | Path_Type == "Result"){
     Path <- paste(Main_Path,Project,"Results",sep="/")
   }
@@ -31,18 +39,20 @@ my_path <- function(Path_Type,Project="NA",Extra_Path="",Name =""){
     Path <- "./Figures"
   }
   
+  # Error messages for misspelled variables
   Options = c("R","Results","D","Data","G","Generic","F","Figures")
   if(!Path_Type %in% Options){
-    print("Data type value not acepted. Current aceptable options:")
+    print("Data type value not accepted. Current acceptable options:")
     print(Options)
     stop()
   }
   
+  # Final path
   my_path <- paste(Path,Extra_Path,"",sep="/")
   
   # Fix any double // in the path
   my_path<- gsub("//","/",my_path)
   
+  # Function returns the selected path
   return(my_path)
 }
-
