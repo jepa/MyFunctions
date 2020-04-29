@@ -24,7 +24,7 @@ my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="",Repo = NA, Opt
   # Automatically sets the project name
   if(is.na(Project) == TRUE){
     Project <- basename(getwd())
-    }else{
+  }else{
     Project <- Project # If another path is needed
   }
   
@@ -52,14 +52,16 @@ my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="",Repo = NA, Opt
   
   # Final path
   
-  if(Option == "RT"){
-    my_path <- data.table::fread(paste(Path,Extra_Path,"",Name,".txt",sep=""))
-  }
-  if(Option == "RC"){
-    my_path <- data.table::fread(paste(Path,Extra_Path,"",Name,".csv",sep=""))
-  }
-  if(Option == "P"){
+  if(Option == "Read"){
+    
+    my_path <- paste(Path,Extra_Path,Name,sep="/")
+    my_path <- gsub("//","/",my_path)
+    my_path <- data.table::fread(my_path)
+    
+  }else{
+    
     my_path <- paste(Path,Extra_Path,"",sep="/")
+    
   }
   
   # Fix any double // in the path
