@@ -5,6 +5,7 @@ Package collecting functions I commonly use. Note all functions start with "my_"
 
 - `devtools::document()`, this will automatically create the function documentation
 - `devtools::install_github("jepa/MyFunctions")`, run this function to install the package
+  -- set `force = TRUE` for updates and restart R
 
 # Functions added
 - `my_lib`, loads a selected library and installs those absent

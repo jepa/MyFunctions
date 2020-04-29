@@ -8,14 +8,14 @@
 #' @param Project I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.
 #' @param Extra_Path Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. Project/SubFolder -
 #' @param Name Dataset name in case you want the option to load data
-#' @param Repo Normally set to jepa88 but if connection to Drobo is availbale use Repo = "Drobo"
-#' @param Option There are three options; RT reads a .txt file, RC reads a .csv file and P set the path. Default P
+#' @param Repo Normally set to jepa88 but if connection to Drobo is availbale use Repo = "FALSE"
+#' @param Read Default Read = FALSE. Read = FALSE will only return a path wile Read = TURE will read a dataset
 #' @return Paths to save and load data within a project
 #' @export
-my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="",Repo = NA, Option="P"){
+my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="", Repo = TRUE, Read=FALSE, header=TRUE){
   
   # Main path where I store my data
-  if(is.na(Repo) == TRUE){
+  if(Repo == TRUE){
     Main_Path <- "/Volumes/jepa88/Data" # jepa88 (pre-selected)
   }else{
     Main_Path <- "Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
@@ -56,16 +56,16 @@ my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="",Repo = NA, Opt
     
     my_path <- paste(Path,Extra_Path,Name,sep="/")
     my_path <- gsub("//","/",my_path)
-    my_path <- data.table::fread(my_path)
+    # my_path <- data.table::fread(my_path, header=header)
+    my_path <- readr::read_csv(my_path)
     
   }else{
     
     my_path <- paste(Path,Extra_Path,"",sep="/")
-    
-  }
+    # Fix any double // in the path
+    my_path<- gsub("//","/",my_path) 
   
-  # Fix any double // in the path
-  my_path<- gsub("//","/",my_path)
+    }
   
   # Function returns the selected path
   return(my_path)
