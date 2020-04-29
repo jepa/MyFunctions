@@ -56,8 +56,8 @@ my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="", Repo = TRUE, 
     
     my_path <- paste(Path,Extra_Path,Name,sep="/")
     my_path <- gsub("//","/",my_path)
-    # my_path <- data.table::fread(my_path, header=header)
-    my_path <- readr::read_csv(my_path)
+    my_path <- data.table::fread(my_path, header=header)
+    # my_path <- readr::read_csv(my_path)
     
   }else{
     
