@@ -4,68 +4,66 @@
 #' package is not installed, it will install it first
 #' and the it will load the recently installed package
 #'
-#' @param Path_Type Type of path needed "D" for Data, "R", for Result and "G" for generic. You need those paths to be load in the global environment
-#' @param Project I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.
-#' @param Extra_Path Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. Project/SubFolder -
-#' @param Name Dataset name in case you want the option to load data
-#' @param Repo Normally set to jepa88 but if connection to Drobo is availbale use Repo = "FALSE"
-#' @param Read Default Read = FALSE. Read = FALSE will only return a path wile Read = TURE will read a dataset
+#' @param path_type Type of path needed "D" for Data, "R", for Result and "G" for generic. You need those paths to be load in the global environment
+#' @param project I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.
+#' @param extra_path Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. project/SubFolder -
+#' @param name Dataset name in case you want the option to load data
+#' @param repo Normally set to jepa88 but if connection to Drobo is availbale use repo = "FALSE"
+#' @param read Default read = FALSE. read = FALSE will only return a path wile read = TURE will read a dataset
 #' @return Paths to save and load data within a project
 #' @export
-my_path <- function(Path_Type,Project = NA,Extra_Path="",Name ="", Repo = TRUE, Read=FALSE, header=TRUE){
+my_path <- function(path_type, project = TRUE, extra_path="", name ="", repo = TRUE, read=FALSE, header=TRUE){
   
   # Main path where I store my data
-  if(Repo == TRUE){
+  if(repo == TRUE){
     Main_Path <- "/Volumes/jepa88/Data" # jepa88 (pre-selected)
   }else{
     Main_Path <- "Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
   }
   
   # Automatically sets the project name
-  if(is.na(Project) == TRUE){
+  if(project == TRUE){
     Project <- basename(getwd())
-  }else{
-    Project <- Project # If another path is needed
   }
   
-  # Set Project Data, Generic Data, Results and Figures paths
-  if(Path_Type == "R" | Path_Type == "Result"){
+  # Set project Data, Generic Data, Results and Figures paths
+  if(path_type %in% c("R","r","Result","result")){
     Path <- paste(Main_Path,Project,"Results",sep="/")
   }
-  if(Path_Type == "D" | Path_Type == "Data"){
+  if(path_type %in% c("D","Data","d","data")){
     Path <- paste(Main_Path,Project,"Data",sep="/")
   }
-  if(Path_Type == "G" | Path_Type == "Generic"){
+  if(path_type%in% c("G","Generic","g","generic")){
     Path <- Main_Path
   }
-  if(Path_Type == "F" | Path_Type == "Figures"){
+  if(path_type%in% c("F","f","Figures","Figure","figure","figures")){
     Path <- "./Figures"
   }
-  
+
   # Error messages for misspelled variables
   Options = c("R","Results","D","Data","G","Generic","F","Figures")
-  if(!Path_Type %in% Options){
+  if(!path_type %in% Options){
     print("Data type value not accepted. Current acceptable options:")
     print(Options)
     stop()
   }
   
   # If the reading option is TRUE
-  if(Read == TRUE){
-    my_path <- paste(Path,Extra_Path,Name,sep="/")
+  if(read == TRUE){
+    My_Path <- paste(Path,extra_path,name,sep="/")
     # Fix any double // in the path
-    my_path <- gsub("//","/",my_path)
-    if(stringr::str_detect(Name,".xlsx") == TRUE){
-      my_path <- readxl::read_excel(my_path)
+    My_Path <- gsub("//","/",My_Path)
+    if(stringr::str_detect(name,".xlsx") == TRUE){
+      My_Path <- readxl::read_excel(My_Path)
     }else{
-      my_path <- data.table::fread(my_path, header=header)
+      My_Path <- data.table::fread(My_Path, header=header)
     }
   }else{
-    my_path <- paste(Path,Extra_Path,"",sep="/")
+    My_Path <- paste(Path,extra_path,"",sep="/")
     # Fix any double // in the path
-    my_path<- gsub("//","/",my_path) 
+    My_Path<- gsub("//","/",My_Path) 
   }
   
   # Function returns the selected path
-  return(my_path)
+  return(My_Path)
 }
