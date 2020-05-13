@@ -4,21 +4,21 @@
 \alias{my_path}
 \title{Load and installs packages needed}
 \usage{
-my_path(Path_Type, Project = NA, Extra_Path = "", Name = "",
-  Repo = TRUE, Read = FALSE, header = TRUE)
+my_path(path_type, project = TRUE, extra_path = "", name = "",
+  repo = TRUE, read = FALSE, header = TRUE)
 }
 \arguments{
-\item{Path_Type}{Type of path needed "D" for Data, "R", for Result and "G" for generic. You need those paths to be load in the global environment}
+\item{path_type}{Type of path needed "D" for Data, "R", for Result and "G" for generic. You need those paths to be load in the global environment}
 
-\item{Project}{I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.}
+\item{project}{I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.}
 
-\item{Extra_Path}{Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. Project/SubFolder -}
+\item{extra_path}{Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. project/SubFolder -}
 
-\item{Name}{Dataset name in case you want the option to load data}
+\item{name}{Dataset name in case you want the option to load data}
 
-\item{Repo}{Normally set to jepa88 but if connection to Drobo is availbale use Repo = "FALSE"}
+\item{repo}{Normally set to jepa88 but if connection to Drobo is availbale use repo = "FALSE"}
 
-\item{Read}{Default Read = FALSE. Read = FALSE will only return a path wile Read = TURE will read a dataset}
+\item{read}{Default read = FALSE. read = FALSE will only return a path wile read = TURE will read a dataset}
 }
 \value{
 Paths to save and load data within a project
