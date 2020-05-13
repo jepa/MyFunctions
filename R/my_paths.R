@@ -16,7 +16,7 @@ my_path <- function(path_type, project = TRUE, extra_path="", name ="", repo = T
   
   # Main path where I store my data
   if(repo == TRUE){
-    Main_Path <- "/Volumes/jepa88/Data" # jepa88 (pre-selected)
+    Main_Path <- "/Volumes/HALL2000/Data" # jepa88 (pre-selected)
   }else{
     Main_Path <- "Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
   }
