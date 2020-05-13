@@ -9,7 +9,8 @@ Package collecting functions I commonly use. Note all functions start with "my_"
 
 # Functions added
 - `my_lib`, loads a selected library and installs those absent
-- `my_ggtheme_p()`, a personalized theme for `ggplot2` plots
-- `my_ggtheme_m()`, a personalized theme for `ggplot2` maps
+- `my_ggtheme_p`, a personalized theme for `ggplot2` plots
+- `my_ggtheme_m`, a personalized theme for `ggplot2` maps
 - `my_path`, sets different paths for project
   - requires `data.table`,`readxl`, `stringr`
+- `my_project`, creates the initial structure of the repository and associated data directories
