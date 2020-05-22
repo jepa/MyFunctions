@@ -15,11 +15,15 @@
 my_path <- function(path_type, project = TRUE, extra_path="", name ="", repo = TRUE, read=FALSE, header=TRUE){
   
   # Main path where I store my data
-  if(repo == TRUE){
+  if(Sys.info()[7] == "carmelia"){
     Main_Path <- "/Volumes/HALL2000/Data" # jepa88 (pre-selected)
-  }else{
-    Main_Path <- "Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
-  }
+    }
+    if(Sys.info()[7] == "jepa88"){
+      Main_Path <- "Z:/JULIANO_NEYMAR"
+    }
+  if(Sys.info()[7] == "HALL1000"){
+      Main_Path <- "Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
+    }
   
   # Automatically sets the project name
   if(project == TRUE){
