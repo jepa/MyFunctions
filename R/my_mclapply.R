@@ -7,7 +7,7 @@
 #' @return A modified, or not, version of mclapply
 #' @export
 
-Mclapply_Hack <- function(...){
+my_mclapply <- function(...){
   ## Create a cluster
   size.of.list <- length(list(...)[[1]])
   
