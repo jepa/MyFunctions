@@ -12,7 +12,7 @@
 #' @param read Default read = FALSE. read = FALSE will only return a path wile read = TURE will read a dataset
 #' @return Paths to save and load data within a project
 #' @export
-my_path <- function(path_type, project = TRUE, extra_path="", name ="", repo = TRUE, read=FALSE, header=TRUE){
+my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALSE, header=TRUE, project = TRUE){
   
   # Main path where I store my data
   if(Sys.info()[7] == "carmelia"){
@@ -21,8 +21,8 @@ my_path <- function(path_type, project = TRUE, extra_path="", name ="", repo = T
     if(Sys.info()[7] == "jepa88"){
       Main_Path <- "Z:/JULIANO_NEYMAR"
     }
-  if(Sys.info()[7] == "HALL1000"){
-      Main_Path <- "Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
+  if(Sys.info()[7] == "hall1000"){
+      Main_Path <- "/Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
     }
   
   # Automatically sets the project name
