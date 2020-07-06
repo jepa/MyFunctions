@@ -9,22 +9,24 @@
 my_ggtheme_m <- function() {
   theme(
     plot.title = element_text(size = rel(1), hjust = 0, face = "bold"),
+    # Background
     panel.background = element_blank(),
     strip.background = element_blank(),
     panel.border   = element_blank(),
     panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
+    panel.grid.major = element_line(colour = "white"),
+    # Axis
     axis.ticks = element_blank(),
-    axis.text.x = element_text(size = 14,
-                               angle = 0,
-                               face = "plain"),
-    axis.text.y = element_text(size = 14),
-    axis.title = element_text(size = 14),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    # Legend 
     legend.key = element_rect(colour = NA, fill = NA),
-    legend.position = "top",
-    legend.title = element_text(size = 16),
-    legend.text = element_text(size = 14),
-    strip.text.x = element_text(size = 10, colour = "black"),
-    strip.text = element_text(size = 18)
+    legend.position = "bottom",
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 12),
+    legend.key.width = unit(3,"line"),
+    # For facets
+    strip.text.x = element_text(size = 12, colour = "black"),
+    strip.text = element_text(size = 16)
   )
 }
