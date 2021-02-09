@@ -16,7 +16,7 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
   
   # Main path where I store my data
   if(Sys.info()[7] == "carmelia"){
-    Main_Path <- "/Volumes/HALL2000/Data" # jepa88 (pre-selected)
+    Main_Path <- "/Volumes/Enterprise/Data" # jepa88 (pre-selected)
     }
     if(Sys.info()[7] == "jepa88"){
       Main_Path <- "Z:/JULIANO_NEYMAR"
