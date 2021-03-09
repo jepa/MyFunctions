@@ -6,7 +6,7 @@
 #' @return a ggplot theme
 #' @export
 
-my_ggtheme_p <- function(ax_tx_s = 14, ax_tl_s = 15, leg_pos = "top", leg_tl_s = 16, leg_tx = 14) {
+my_ggtheme_p <- function(ax_tx_s = 14, axx_tx_ang = 0,axy_tx_ang = 0, ax_tl_s = 15, leg_pos = "top", leg_tl_s = 16, leg_tx_s = 14,hjust = 0) {
   theme(
     plot.title = element_text(size = rel(1), hjust = 0, face = "bold"),
     panel.background = element_blank(),
@@ -17,7 +17,8 @@ my_ggtheme_p <- function(ax_tx_s = 14, ax_tl_s = 15, leg_pos = "top", leg_tl_s =
     axis.line = element_line(color = "black"),
     axis.ticks = element_blank(),
     axis.text.x = element_text(size = ax_tx_s,
-                               angle = 0,
+                               angle = axx_tx_ang,
+                               hjust = hjust,
                                face = "plain",
                               color = "black"),
     axis.text.y = element_text(size = ax_tx_s,
@@ -25,8 +26,8 @@ my_ggtheme_p <- function(ax_tx_s = 14, ax_tl_s = 15, leg_pos = "top", leg_tl_s =
     axis.title = element_text(size = ax_tl_s),
     legend.key = element_rect(colour = NA, fill = NA),
     legend.position = leg_pos,
-    legend.title = element_text(size = legend_title_size),
-    legend.text = element_text(size = leg_tx),
+    legend.title = element_text(size = leg_tl_s),
+    legend.text = element_text(size = leg_tx_s),
     strip.text.x = element_text(size = 10, colour = "black"),
     strip.text = element_text(size = 18)
   )
