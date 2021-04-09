@@ -62,9 +62,9 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
     # Fix any double // in the path
     My_Path <- gsub("//","/",My_Path)
     if(stringr::str_detect(name,".xlsx") == TRUE){
-      My_Path <- readxl::read_excel(My_Path)
+      My_Path <- readxl::read_excel(My_Path) %>% janitor::clean_names()
     }else{
-      My_Path <- data.table::fread(My_Path, header=header)
+      My_Path <- data.table::fread(My_Path, header=header) %>% janitor::clean_names()
     }
   }else{
     My_Path <- paste(Path,extra_path,"",sep="/")
@@ -73,5 +73,6 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
   }
   
   # Function returns the selected path
+  
   return(My_Path)
 }
