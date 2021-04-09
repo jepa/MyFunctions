@@ -27,15 +27,19 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
   
   # Automatically sets the project name
   if(project == TRUE){
-    Project <- basename(getwd())
+    
+    # Get projecet name (only working for carmelia right now)
+    Project_root <- rprojroot::find_rstudio_root_file()
+    Project <- sub("^.*([^/]*/[^/]*)", "\\1", Project_root)
+    
   }
   
   # Set project Data, Generic Data, Results and Figures paths
   if(path_type %in% c("R","r","Result","result")){
-    Path <- paste(Main_Path,Project,"Results",sep="/")
+    Path <- paste(Main_Path,Project,"/Results",sep="")
   }
   if(path_type %in% c("D","Data","d","data")){
-    Path <- paste(Main_Path,Project,"Data",sep="/")
+    Path <- paste(Main_Path,Project,"/Data",sep="")
   }
   if(path_type%in% c("G","Generic","g","generic")){
     Path <- Main_Path
