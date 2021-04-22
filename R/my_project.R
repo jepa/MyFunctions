@@ -7,7 +7,7 @@
 #' @param Repo Main data repository. Currently set to HALL2000
 #' @return Creates a series of directories that follow the basic structure of all my projects
 #' @export
-my_project <- function(Repo = "HALL2000"){
+my_project <- function(Repo = "Enterprise"){
   
   # Get the projects name
   Project <- basename(getwd())
@@ -21,24 +21,24 @@ my_project <- function(Repo = "HALL2000"){
   dir.create("References")
   
   # Create data repos in Hall2000
-  if(Repo == "HALL2000"){
+  if(Repo == "Enterprise"){
     
-    if(dir.exists("/Volumes/HALL2000/") == TRUE){
+    if(dir.exists("/Volumes/Enterprise/") == TRUE){
       
       # Main Data repo for project
-      dir.create(paste("/Volumes/HALL2000/Data/",Project,sep=""))
+      dir.create(paste("/Volumes/Enterprise/Data/",Project,sep=""))
       
       # Spatial data repo
-      dir.create(paste("/Volumes/HALL2000/Data/",Project,"/Spatial",sep=""))
+      dir.create(paste("/Volumes/Enterprise/Data/",Project,"/Spatial",sep=""))
       
       # Species data repo
-      dir.create(paste("/Volumes/HALL2000/Data/",Project,"/Species",sep=""))
+      dir.create(paste("/Volumes/Enterprise/Data/",Project,"/Species",sep=""))
       
       # Raw results 
-      dir.create(paste("/Volumes/HALL2000/Data/",Project,"/Raw",sep=""))
+      dir.create(paste("/Volumes/Enterprise/Data/",Project,"/Raw",sep=""))
       
     }else{
-      print("Hall 2000 is not connected. Do you need to change the Repo?")
+      print("Enterprise is not connected. Do you need to change the Repo?")
     }
   }
 }
