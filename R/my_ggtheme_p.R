@@ -6,7 +6,7 @@
 #' @return a ggplot theme
 #' @export
 
-my_ggtheme_p <- function(ax_tx_s = 14, axx_tx_ang = 0,axy_tx_ang = 0, ax_tl_s = 15, leg_pos = "top", leg_tl_s = 16, leg_tx_s = 14,hjust = 0) {
+my_ggtheme_p <- function(ax_tx_s = 14, axx_tx_ang = 0,axy_tx_ang = 0, ax_tl_s = 15, leg_pos = "top", leg_tl_s = 16, leg_tx_s = 14,hjust = 0, facet_tx_s = 10) {
   theme(
     plot.title = element_text(size = rel(1), hjust = 0, face = "bold"),
     panel.background = element_blank(),
@@ -24,11 +24,13 @@ my_ggtheme_p <- function(ax_tx_s = 14, axx_tx_ang = 0,axy_tx_ang = 0, ax_tl_s = 
     axis.text.y = element_text(size = ax_tx_s,
                               color = "black"),
     axis.title = element_text(size = ax_tl_s),
+    # For legend
     legend.key = element_rect(colour = NA, fill = NA),
     legend.position = leg_pos,
     legend.title = element_text(size = leg_tl_s),
     legend.text = element_text(size = leg_tx_s),
-    strip.text.x = element_text(size = 10, colour = "black"),
+    # For `facet_wrap`
+    strip.text.x = element_text(size = facet_tx_s, colour = "black"),
     strip.text = element_text(size = 18)
   )
 }
