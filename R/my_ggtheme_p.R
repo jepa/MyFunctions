@@ -30,7 +30,6 @@ my_ggtheme_p <- function(ax_tx_s = 14, axx_tx_ang = 0,axy_tx_ang = 0, ax_tl_s = 
     legend.title = element_text(size = leg_tl_s),
     legend.text = element_text(size = leg_tx_s),
     # For `facet_wrap`
-    strip.text.x = element_text(size = facet_tx_s, colour = "black"),
-    strip.text = element_text(size = 18)
+    strip.text = element_text(size = facet_tx_s, colour = "black")
   )
 }
