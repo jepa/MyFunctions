@@ -6,7 +6,7 @@
 #' @return a ggplot theme
 #' @export
 
-my_ggtheme_m <- function() {
+my_ggtheme_m <- function(leg_pos = "top"){
   theme(
     plot.title = element_text(size = rel(1), hjust = 0, face = "bold"),
     # Background
@@ -21,7 +21,7 @@ my_ggtheme_m <- function() {
     axis.title = element_blank(),
     # Legend 
     legend.key = element_rect(colour = NA, fill = NA),
-    legend.position = "bottom",
+    legend.position = leg_pos,
     legend.title = element_text(size = 14),
     legend.text = element_text(size = 12),
     legend.key.width = unit(3,"line"),
