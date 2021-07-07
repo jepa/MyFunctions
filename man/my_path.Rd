@@ -4,21 +4,28 @@
 \alias{my_path}
 \title{Load and installs packages needed}
 \usage{
-my_path(path_type, project = TRUE, extra_path = "", name = "",
-  repo = TRUE, read = FALSE, header = TRUE)
+my_path(
+  path_type,
+  extra_path = "",
+  name = "",
+  repo = TRUE,
+  read = FALSE,
+  header = TRUE,
+  project = TRUE
+)
 }
 \arguments{
 \item{path_type}{Type of path needed "D" for Data, "R", for Result and "G" for generic. You need those paths to be load in the global environment}
-
-\item{project}{I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.}
 
 \item{extra_path}{Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. project/SubFolder -}
 
 \item{name}{Dataset name in case you want the option to load data}
 
-\item{repo}{Normally set to jepa88 but if connection to Drobo is availbale use repo = "FALSE"}
+\item{repo}{Normally set to jepa88 but if connection to Drobo is available use repo = "FALSE"}
 
 \item{read}{Default read = FALSE. read = FALSE will only return a path wile read = TURE will read a dataset}
+
+\item{project}{I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.}
 }
 \value{
 Paths to save and load data within a project

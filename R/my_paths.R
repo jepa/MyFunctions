@@ -15,7 +15,7 @@
 my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALSE, header=TRUE, project = TRUE){
   
   # Main path where I store my data
-  if(Sys.info()[7] == "carmelia"){
+  if(Sys.info()[7] == "jepa"){
     Main_Path <- "/Volumes/Enterprise/Data" # jepa88 (pre-selected)
     }
     if(Sys.info()[7] == "jepa88"){
