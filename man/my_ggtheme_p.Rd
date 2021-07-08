@@ -4,7 +4,17 @@
 \alias{my_ggtheme_p}
 \title{My personal plot theme}
 \usage{
-my_ggtheme_p()
+my_ggtheme_p(
+  ax_tx_s = 14,
+  axx_tx_ang = 0,
+  axy_tx_ang = 0,
+  ax_tl_s = 15,
+  leg_pos = "top",
+  leg_tl_s = 16,
+  leg_tx_s = 14,
+  hjust = 0,
+  facet_tx_s = 10
+)
 }
 \value{
 a ggplot theme
