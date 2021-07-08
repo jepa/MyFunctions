@@ -4,7 +4,7 @@
 \alias{my_ggtheme_m}
 \title{My personal map theme}
 \usage{
-my_ggtheme_m()
+my_ggtheme_m(leg_pos = "top")
 }
 \value{
 a ggplot theme
