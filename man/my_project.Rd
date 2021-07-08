@@ -4,7 +4,7 @@
 \alias{my_project}
 \title{Creates a project basic structure}
 \usage{
-my_project(Repo = "HALL2000")
+my_project(Repo = "Enterprise")
 }
 \arguments{
 \item{Repo}{Main data repository. Currently set to HALL2000}
