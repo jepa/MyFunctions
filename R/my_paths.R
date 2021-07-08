@@ -81,7 +81,7 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
     
     
   }else{
-    My_Path <- paste(Path,extra_path,name,"",sep="/")
+    My_Path <- paste(Path,extra_path,name,sep="/")
     # Fix any double // in the path
     My_Path<- gsub("//","/",My_Path) 
   }
