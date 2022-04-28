@@ -72,7 +72,7 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA"){
   }
   
   # If no options are selected 
-  return_sf <- sf::st_read(read_path)
+  # return_sf <- sf::st_read(read_path)
   
   
   
