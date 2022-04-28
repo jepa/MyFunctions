@@ -59,6 +59,8 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA"){
 
     return_sf <- sf::st_read(read_path) %>% 
       sf::st_transform(crs = crs)
+  }else{
+    return_sf <- sf::st_read(read_path)
   }
   
   # Do you want a simplified map?
