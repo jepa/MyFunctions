@@ -7,7 +7,7 @@
 #' @param sf_name Main data repository. Currently set to HALL2000
 #' @param crs The need crs of shapefile
 #' @param simple if simple = NA then is fine
-#' @return the requested shapefile
+#' @return the requested shapefile of choice
 #' @export
 
 my_sf <- function(sf_name, crs = "NA", simple = "NA"){

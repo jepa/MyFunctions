@@ -14,7 +14,7 @@ my_sf(sf_name, crs = "NA", simple = "NA")
 \item{simple}{if simple = NA then is fine}
 }
 \value{
-the requested shapefile
+the requested shapefile of choice
 }
 \description{
 This function simply loads a shapefile. I just created it because
