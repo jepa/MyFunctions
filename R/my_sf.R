@@ -7,19 +7,27 @@
 #' @param sf_name Main data repository. Currently set to HALL2000
 #' @param crs The need crs of shapefile
 #' @param simple if simple = NA then is fine
+#' @param system If you want to override the automatic system identification.
 #' @return the requested shapefile of choice
 #' @export
 
-my_sf <- function(sf_name, crs = "NA", simple = "NA"){
+my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   
+  if(is.na(system)){
+    user <-  Sys.info()[7]
+  }else{
+    user <- system
+  }
+    
+    
   # Main path where I store my data
-  if(Sys.info()[7] == "jepa"){
+  if(user == "jepa"){
     Main_Path <- "/Volumes/Enterprise/Data" # jepa88 (pre-selected)
   }
-  if(Sys.info()[7] == "jepa88"){
+  if(user == "jepa88"){
     Main_Path <- "Z:/JULIANO_NEYMAR"
   }
-  if(Sys.info()[7] == "juliano"){
+  if(user == "juliano"){
     Main_Path <- "/Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
   }
   

@@ -10,18 +10,26 @@
 #' @param name Dataset name in case you want the option to load data
 #' @param repo Normally set to jepa88 but if connection to Drobo is available use repo = "FALSE"
 #' @param read Default read = FALSE. read = FALSE will only return a path wile read = TURE will read a dataset
+#' @param system If you want to override the automatic system identification
 #' @return Paths to save and load data within a project
 #' @export
-my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALSE, header=TRUE, project = TRUE){
+my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALSE, header=TRUE, project = TRUE, system = NA){
+  
+  # Overrride automati path
+  if(is.na(system)){
+    user <-  Sys.info()[7]
+  }else{
+    user <- system
+  }
   
   # Main path where I store my data
-  if(Sys.info()[7] == "jepa"){
+  if(user== "jepa"){
     Main_Path <- "/Volumes/Enterprise/Data" # jepa88 (pre-selected)
     }
-    if(Sys.info()[7] == "jepa88"){
+    if(user == "jepa88"){
       Main_Path <- "Z:/JULIANO_NEYMAR"
     }
-  if(Sys.info()[7] == "juliano"){
+  if(user == "juliano"){
       Main_Path <- "/Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
     }
   

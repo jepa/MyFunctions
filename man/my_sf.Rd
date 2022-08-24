@@ -4,7 +4,7 @@
 \alias{my_sf}
 \title{Loads a specific shapefile}
 \usage{
-my_sf(sf_name, crs = "NA", simple = "NA")
+my_sf(sf_name, crs = "NA", simple = "NA", system = NA)
 }
 \arguments{
 \item{sf_name}{Main data repository. Currently set to HALL2000}
@@ -12,6 +12,8 @@ my_sf(sf_name, crs = "NA", simple = "NA")
 \item{crs}{The need crs of shapefile}
 
 \item{simple}{if simple = NA then is fine}
+
+\item{system}{If you want to override the automatic system identification.}
 }
 \value{
 the requested shapefile of choice

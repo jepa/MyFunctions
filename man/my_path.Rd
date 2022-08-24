@@ -11,7 +11,8 @@ my_path(
   repo = TRUE,
   read = FALSE,
   header = TRUE,
-  project = TRUE
+  project = TRUE,
+  system = NA
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ my_path(
 \item{read}{Default read = FALSE. read = FALSE will only return a path wile read = TURE will read a dataset}
 
 \item{project}{I normally call my data folder the same as the project so it automatically sets to the project name. Alternatives available.}
+
+\item{system}{If you want to override the automatic system identification}
 }
 \value{
 Paths to save and load data within a project
