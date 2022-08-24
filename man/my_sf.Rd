@@ -8,6 +8,10 @@ my_sf(sf_name, crs = "NA", simple = "NA")
 }
 \arguments{
 \item{sf_name}{Main data repository. Currently set to HALL2000}
+
+\item{crs}{The need crs of shapefile}
+
+\item{simple}{if simple = NA then is fine}
 }
 \value{
 the requested shapefile
