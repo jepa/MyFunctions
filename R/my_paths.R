@@ -77,8 +77,12 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
     My_Path <- gsub("//","/",My_Path)
     if(stringr::str_detect(name,".xlsx") == TRUE){
       My_Path <- readxl::read_excel(My_Path) %>% janitor::clean_names()
-    }else{
-      My_Path <- data.table::fread(My_Path, header=header) %>% janitor::clean_names()
+    }
+    if(stringr::str_detect(name,".csv") == TRUE){
+    My_Path <- data.table::fread(My_Path, header=header) %>% janitor::clean_names()
+    }
+    if(stringr::str_detect(name,".RData") == TRUE){
+      load(My_Path)
     }
     
     # Already load the coords with names
