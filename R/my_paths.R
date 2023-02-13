@@ -23,13 +23,13 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
   }
   
   # Main path where I store my data
-  if(user== "jepa"){
+  if(user== "juliano"){
     Main_Path <- "/Volumes/Enterprise/Data" # jepa88 (pre-selected)
     }
     if(user == "jepa88"){
       Main_Path <- "Z:/JULIANO_NEYMAR"
     }
-  if(user == "juliano"){
+  if(user == "drobo"){
       Main_Path <- "/Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
     }
   
