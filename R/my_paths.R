@@ -81,6 +81,9 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
     if(stringr::str_detect(name,".csv") == TRUE){
     My_Path <- data.table::fread(My_Path, header=header) %>% janitor::clean_names()
     }
+    if(stringr::str_detect(name,"txt") == TRUE){
+      My_Path <- data.table::fread(My_Path, header=header) %>% janitor::clean_names()
+    }
     if(stringr::str_detect(name,".RData") == TRUE){
       load(My_Path)
     }
