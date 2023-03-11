@@ -7,7 +7,7 @@
 my_sf(sf_name, crs = "NA", simple = "NA", system = NA)
 }
 \arguments{
-\item{sf_name}{Main data repository. Currently set to HALL2000}
+\item{sf_name}{Name of shapefile to load. Current options FAO, SAU, MEOW}
 
 \item{crs}{The need crs of shapefile}
 
