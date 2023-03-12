@@ -4,7 +4,7 @@
 #' I have frquently uised sf and is annoying to be coping + pasting
 #' every single time
 #'
-#' @param sf_name Name of shapefile to load. Current options FAO, SAU, MEOW
+#' @param sf_name Name of shapefile to load. Current options FAO, SAU, MEOW, RFMO
 #' @param crs The need crs of shapefile
 #' @param simple if simple = NA then is fine
 #' @param system If you want to override the automatic system identification.
@@ -34,7 +34,7 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   root_path <- paste(Main_Path,"/Spatial/",sep="")
   
   # Error messages for misspelled variables
-  Options = c("SAU","FAO","MEOW")
+  Options = c("SAU","FAO","MEOW","RFMO")
   if(!sf_name %in% Options){
     print("Data type value not accepted. Current acceptable options:")
     print(Options)
@@ -58,6 +58,10 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
     read_path <- paste0(root_path,"MEOW/meow_ecos.shp")
   }
   
+  if(sf_name == "RFMO"){
+    
+    read_path <- paste0(root_path,"SAU/SAU_RFMO/SAU_RFMO_Sept_2015.shp")
+  }
   
   # Set projection options
   
