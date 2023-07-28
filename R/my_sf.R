@@ -25,7 +25,7 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
     Main_Path <- "/Volumes/Enterprise/Data" # jepa88 (pre-selected)
   }
   if(user == "jepa88"){
-    Main_Path <- "Z:/JULIANO_NEYMAR"
+    Main_Path <- "~/Library/CloudStorage/OneDrive-UBC/Data/"
   }
   if(user == "drobo"){
     Main_Path <- "/Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
