@@ -6,7 +6,16 @@
 #' @return a ggplot theme
 #' @export
 
-my_ggtheme_m <- function(map_type = "global",ax_tx_s = 14, axx_tx_ang = 0,axy_tx_ang = 0, ax_tl_s = 15, leg_pos, leg_tl_s = 16, leg_tx_s = 14,hjust = 0, facet_tx_s = 10){
+my_ggtheme_m <- function(map_type = "global",
+                         ax_tx_s = 14,
+                         axx_tx_ang = 0,
+                         axy_tx_ang = 0,
+                         ax_tl_s = 15,
+                         leg_pos = "bottom",
+                         leg_tl_s = 16,
+                         leg_tx_s = 14,
+                         hjust = 0, 
+                         facet_tx_s = 10){
   
   if(map_type == "global"){
     
