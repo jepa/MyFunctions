@@ -18,7 +18,6 @@ my_project <- function(Repo = "one_drive"){
   dir.create("Results/Figures")
   dir.create("Results/Tables")
   dir.create("Documents")
-  dir.create("References")
   
   # Create data repos in Hall2000
   if(Repo == "Enterprise"){
@@ -56,7 +55,7 @@ my_project <- function(Repo = "one_drive"){
       dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/Species",sep=""))
       
       # Raw results 
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"Results/Raw",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/Results/Raw",sep=""))
       
     }else{
       print("No connection with One Drive UBC Data. Do you need to change the Repo? Try Enterprise")
