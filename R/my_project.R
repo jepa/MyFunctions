@@ -7,7 +7,7 @@
 #' @param Repo Main data repository. Currently set to HALL2000
 #' @return Creates a series of directories that follow the basic structure of all my projects
 #' @export
-my_project <- function(Repo = "Enterprise"){
+my_project <- function(Repo = "one_drive"){
   
   # Get the projects name
   Project <- basename(getwd())
@@ -39,6 +39,27 @@ my_project <- function(Repo = "Enterprise"){
       
     }else{
       print("Enterprise is not connected. Do you need to change the Repo?")
+    }
+  }
+  
+  if(Repo == "one_drive"){
+    
+    if(dir.exists("~/Library/CloudStorage/OneDrive-UBC/Data/") == TRUE){
+      
+      # Main Data repo for project
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,sep=""))
+      
+      # Spatial data repo
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/Spatial",sep=""))
+      
+      # Species data repo
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/Species",sep=""))
+      
+      # Raw results 
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"Results/Raw",sep=""))
+      
+    }else{
+      print("No connection with One Drive UBC Data. Do you need to change the Repo? Try Enterprise")
     }
   }
 }
