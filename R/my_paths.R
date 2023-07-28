@@ -27,7 +27,7 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
     Main_Path <- "/Volumes/Enterprise/Data" # jepa88 (pre-selected)
     }
     if(user == "jepa88"){
-      Main_Path <- "Z:/JULIANO_NEYMAR"
+      Main_Path <- "~/Library/CloudStorage/OneDrive-UBC/Data/"
     }
   if(user == "drobo"){
       Main_Path <- "/Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
@@ -89,7 +89,8 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
     }
     
     # Already load the coords with names
-    if(name == "Lon_Lat_DBEM.txt"){
+    if(name == "DBEM_coords"){
+      name == "Lon_Lat_DBEM.txt"
       
       colnames(My_Path) <- c("index","lon","lat")
     }
