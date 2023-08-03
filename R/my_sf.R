@@ -91,7 +91,8 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   # If no options are selected 
   # return_sf <- sf::st_read(read_path)
   
-  
+  return_sf <- return_sf %>% 
+    janitor::clean_names()
   
   return(return_sf)
 }
