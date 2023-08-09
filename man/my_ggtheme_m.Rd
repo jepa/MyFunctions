@@ -10,7 +10,7 @@ my_ggtheme_m(
   axx_tx_ang = 0,
   axy_tx_ang = 0,
   ax_tl_s = 15,
-  leg_pos,
+  leg_pos = "bottom",
   leg_tl_s = 16,
   leg_tx_s = 14,
   hjust = 0,
