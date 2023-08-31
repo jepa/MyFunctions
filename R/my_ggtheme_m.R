@@ -14,6 +14,7 @@ my_ggtheme_m <- function(map_type = "global",
                          leg_pos = "bottom",
                          leg_tl_s = 16,
                          leg_tx_s = 14,
+                         leg_width = 1,
                          hjust = 0, 
                          facet_tx_s = 10){
   
@@ -36,7 +37,7 @@ my_ggtheme_m <- function(map_type = "global",
       legend.position = leg_pos,
       legend.title = element_text(size = 12),
       legend.text = element_text(size = 11),
-      legend.key.width = unit(3,"line"),
+      legend.key.width = unit(leg_width,"line"),
       # For facets
       strip.text.x = element_text(size = 12, colour = "black"),
       strip.text = element_text(size = 11)
