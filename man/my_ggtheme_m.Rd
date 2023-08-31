@@ -13,6 +13,7 @@ my_ggtheme_m(
   leg_pos = "bottom",
   leg_tl_s = 16,
   leg_tx_s = 14,
+  leg_width = 1,
   hjust = 0,
   facet_tx_s = 10
 )
