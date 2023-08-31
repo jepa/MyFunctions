@@ -34,7 +34,7 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   root_path <- paste(Main_Path,"/Spatial/",sep="")
   
   # Error messages for misspelled variables
-  Options = c("SAU","FAO","MEOW","RFMO")
+  Options = c("SAU","FAO","MEOW","RFMO","RFMO_tuna")
   if(!sf_name %in% Options){
     print("Data type value not accepted. Current acceptable options:")
     print(Options)
@@ -61,6 +61,11 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   if(sf_name == "RFMO"){
     
     read_path <- paste0(root_path,"SAU/SAU_RFMO/SAU_RFMO_Sept_2015.shp")
+  }
+  
+  if(sf_name == "RFMO_tuna"){
+    
+    read_path <- paste0(root_path,"SAU/SAU_RFMO_TUNA/tuna_rfmo.shp")
   }
   
   # Set projection options
