@@ -13,11 +13,11 @@ my_project <- function(Repo = "one_drive"){
   Project <- basename(getwd())
   
   # Create base directories in Github Repo
-  dir.create("Scripts")
-  dir.create("Results")
-  dir.create("Results/Figures")
-  dir.create("Results/Tables")
-  dir.create("Documents")
+  dir.create("scripts")
+  dir.create("results")
+  dir.create("results/figures")
+  dir.create("results/tables")
+  dir.create("documents")
   
   # Create data repos in Hall2000
   if(Repo == "Enterprise"){
@@ -49,13 +49,13 @@ my_project <- function(Repo = "one_drive"){
       dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,sep=""))
       
       # Spatial data repo
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/Spatial",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/spatial",sep=""))
       
       # Species data repo
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/Species",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/species",sep=""))
       
       # Raw results 
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/Results/Raw",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/results/raw",sep=""))
       
     }else{
       print("No connection with One Drive UBC Data. Do you need to change the Repo? Try Enterprise")
