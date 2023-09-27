@@ -3,6 +3,7 @@
 export(my_data)
 export(my_ggtheme_m)
 export(my_ggtheme_p)
+export(my_land_map)
 export(my_lib)
 export(my_mclapply)
 export(my_path)
