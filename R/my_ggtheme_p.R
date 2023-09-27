@@ -6,7 +6,7 @@
 #' @return a ggplot theme
 #' @export
 
-my_ggtheme_p <- function(ax_tx_s = 14, axx_tx_ang = 0,axy_tx_ang = 0, ax_tl_s = 15, leg_pos = "top", leg_tl_s = 16, leg_tx_s = 14,hjust = 0, facet_tx_s = 10) {
+my_ggtheme_p <- function(ax_tx_s = 12, axx_tx_ang = 0,axy_tx_ang = 0, ax_tl_s = 114, leg_pos = "top", leg_tl_s = 14, leg_tx_s = 12,hjust = 0, facet_tx_s = 12) {
   theme(
     plot.title = element_text(size = rel(1), hjust = 0, face = "bold"),
     panel.background = element_blank(),

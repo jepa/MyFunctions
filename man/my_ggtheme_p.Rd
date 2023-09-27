@@ -5,15 +5,15 @@
 \title{My personal plot theme}
 \usage{
 my_ggtheme_p(
-  ax_tx_s = 14,
+  ax_tx_s = 12,
   axx_tx_ang = 0,
   axy_tx_ang = 0,
-  ax_tl_s = 15,
+  ax_tl_s = 114,
   leg_pos = "top",
-  leg_tl_s = 16,
-  leg_tx_s = 14,
+  leg_tl_s = 14,
+  leg_tx_s = 12,
   hjust = 0,
-  facet_tx_s = 10
+  facet_tx_s = 12
 )
 }
 \value{
