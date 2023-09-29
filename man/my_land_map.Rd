@@ -2,14 +2,16 @@
 % Please edit documentation in R/my_land_map.R
 \name{my_land_map}
 \alias{my_land_map}
-\title{My personal plot theme}
+\title{My land map}
 \usage{
-my_land_map(scale = "small")
+my_land_map(scale = "small", crs = 4326)
+}
+\arguments{
+\item{sacel}{level of map detail, options include small, medium and large}
 }
 \value{
-a ggplot theme
+a ggplot land map
 }
 \description{
-This function creates my own ggplot theme to 
-standarize multiple plots in one document
+This function simply creates a land map to add to plots
 }
