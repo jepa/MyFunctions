@@ -11,6 +11,7 @@ my_ggtheme_m(
   axy_tx_ang = 0,
   ax_tl_s = 15,
   leg_pos = "bottom",
+  leg_aline = 0,
   leg_tl_s = 16,
   leg_tx_s = 14,
   leg_width = 1,

@@ -10,6 +10,7 @@ my_ggtheme_p(
   axy_tx_ang = 0,
   ax_tl_s = 114,
   leg_pos = "top",
+  leg_aline = 0.5,
   leg_tl_s = 14,
   leg_tx_s = 12,
   hjust = 0,
