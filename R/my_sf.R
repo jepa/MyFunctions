@@ -34,7 +34,7 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   root_path <- paste(Main_Path,"/Spatial/",sep="")
   
   # Error messages for misspelled variables
-  Options = c("SAU","FAO","MEOW","RFMO","RFMO_tuna")
+  Options = c("SAU","FAO","LME","Arctic_LME","MEOW","RFMO","RFMO_tuna")
   if(!sf_name %in% Options){
     print("Data type value not accepted. Current acceptable options:")
     print(Options)
@@ -56,6 +56,11 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   if(sf_name == "MEOW"){
     
     read_path <- paste0(root_path,"MEOW/meow_ecos.shp")
+  }
+  
+  if(sf_name == "Arctic_LME"){
+    
+    read_path <- paste0(root_path,"LME_boundaries_2014/LME_2013_polygon.shp")
   }
   
   if(sf_name == "RFMO"){
