@@ -12,7 +12,7 @@
 my_data <- function(data, system = "NA"){
   
   # Error messages for misspelled variables
-  Options = c("sau_index","dbem_coords")
+  Options = c("sau_index","dbem_coords","exploited_species")
   if(!data %in% Options){
     print("Data type value not accepted. Current acceptable options:")
     print(Options)
@@ -50,6 +50,18 @@ my_data <- function(data, system = "NA"){
     
   }
   
+  if(data == "sau_species"){
+    
+    df_return <- my_path("Spp", name ="exploited_species_list.csv",read = T, header = T)
+
+  }
+  
+  if(data == "dbem_species"){
+    
+    df_return <- my_path("Spp", name ="dbem_spp_list.csv",read = T, header = T)
+    
+  }
+  
   # DBEM - related data
   if(data == "dbem_coords"){
     
@@ -57,6 +69,8 @@ my_data <- function(data, system = "NA"){
     colnames(df_return) <- c("index","lon","lat")
     
   }
+  
+  
   
   
   
