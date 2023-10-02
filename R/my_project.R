@@ -49,13 +49,21 @@ my_project <- function(Repo = "one_drive"){
       dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,sep=""))
       
       # Spatial data repo
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/spatial",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/data/spatial",sep=""))
       
       # Species data repo
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/species",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/data/species",sep=""))
       
       # Raw results 
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/results/raw",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/data/results/",sep=""))
+      
+      # Scripts repo
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/scripts/",sep=""))
+      
+      
+      # Specify the file name and location
+      file_path <- paste0("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/scripts/initial_analysis.Rmd",sep="")
+      
       
     }else{
       print("No connection with One Drive UBC Data. Do you need to change the Repo? Try Enterprise")
