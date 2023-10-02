@@ -12,7 +12,7 @@
 my_data <- function(data, system = "NA"){
   
   # Error messages for misspelled variables
-  Options = c("sau_index","dbem_coords","exploited_species")
+  Options = c("sau_index","dbem_coords","sau_species","dbem_species")
   if(!data %in% Options){
     print("Data type value not accepted. Current acceptable options:")
     print(Options)
