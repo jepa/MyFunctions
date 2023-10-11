@@ -17,7 +17,7 @@ my_ggtheme_m <- function(map_type = "global",
                          leg_tx_s = 14,
                          leg_width = 1,
                          hjust = 0, 
-                         facet_tx_s = 10){
+                         facet_tl_s = 14){
   
   if(map_type == "global"){
     
@@ -41,8 +41,8 @@ my_ggtheme_m <- function(map_type = "global",
       legend.text = element_text(size = 11),
       legend.key.width = unit(leg_width,"line"),
       # For facets
-      strip.text.x = element_text(size = 12, colour = "black"),
-      strip.text = element_text(size = 11)
+      # strip.text.x = element_text(size = facet_x_s, colour = "black"),
+      strip.text = element_text(size = facet_tl_s,colour = "black")
     )
     
   }else{
@@ -74,8 +74,8 @@ my_ggtheme_m <- function(map_type = "global",
       legend.text = element_text(size = 11),
       # legend.key.width = unit(2,"line"),
       # For facets
-      strip.text.x = element_text(size = 12, colour = "black"),
-      strip.text = element_text(size = 11)
+      strip.text = element_text(size = facet_tl_s, colour = "black"),
+      # strip.text.x = element_text(size = 11)
     )
     
   }

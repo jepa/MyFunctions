@@ -16,7 +16,7 @@ my_ggtheme_m(
   leg_tx_s = 14,
   leg_width = 1,
   hjust = 0,
-  facet_tx_s = 10
+  facet_tl_s = 14
 )
 }
 \value{
