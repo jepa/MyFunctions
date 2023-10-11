@@ -4,7 +4,7 @@
 \alias{my_land_map}
 \title{My land map}
 \usage{
-my_land_map(scale = "small", crs = 4326)
+my_land_map(scale = "small", crs = 4326, fill = "grey30", color = "grey70")
 }
 \arguments{
 \item{sacel}{level of map detail, options include small, medium and large}
