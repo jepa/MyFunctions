@@ -4,7 +4,7 @@
 #' I have frquently uised sf and is annoying to be coping + pasting
 #' every single time
 #'
-#' @param sf_name Name of shapefile to load. Current options FAO, SAU, MEOW, RFMO
+#' @param sf_name Name of shapefile to load. Options = c("SAU","FAO","LME","Arctic_LME","MEOW","RFMO","RFMO_tuna")
 #' @param crs The need crs of shapefile
 #' @param simple if simple = NA then is fine
 #' @param system If you want to override the automatic system identification.

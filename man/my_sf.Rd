@@ -7,7 +7,7 @@
 my_sf(sf_name, crs = "NA", simple = "NA", system = NA)
 }
 \arguments{
-\item{sf_name}{Name of shapefile to load. Current options FAO, SAU, MEOW, RFMO}
+\item{sf_name}{Name of shapefile to load. Options = c("SAU","FAO","LME","Arctic_LME","MEOW","RFMO","RFMO_tuna")}
 
 \item{crs}{The need crs of shapefile}
 

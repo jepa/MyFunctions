@@ -4,7 +4,7 @@
 #' package is not installed, it will install it first
 #' and the it will load the recently installed package
 #'
-#' @param data The name of the dataset you wanna call
+#' @param data The name of the dataset you wanna call. Options = c("sau_index","dbem_coords","sau_species","dbem_species")
 #' @param system If you want to override the automatic system identification
 #' @return Paths to save and load data within a project
 #' @export

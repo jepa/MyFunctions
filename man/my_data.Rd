@@ -7,7 +7,7 @@
 my_data(data, system = "NA")
 }
 \arguments{
-\item{data}{The name of the dataset you wanna call}
+\item{data}{The name of the dataset you wanna call. Options = c("sau_index","dbem_coords","sau_species","dbem_species")}
 
 \item{system}{If you want to override the automatic system identification}
 }
