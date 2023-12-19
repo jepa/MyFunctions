@@ -9,7 +9,7 @@
 my_ggtheme_p <- function(ax_tx_s = 12,
                          axx_tx_ang = 0,
                          axy_tx_ang = 0,
-                         ax_tl_s = 114, 
+                         ax_tl_s = 14, 
                          leg_pos = "top", 
                          leg_aline = 0.5, 
                          leg_tl_s = 14,
