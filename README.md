@@ -14,3 +14,8 @@ Package collecting functions I commonly use. Note all functions start with "my_"
 - `my_path`, sets different paths for project
   - requires `data.table`,`readxl`, `stringr`
 - `my_project`, creates the initial structure of the repository and associated data directories
+- `my_chg`, estimate percentage change
+- `my_data`, reads is common data frames from my HD
+- `my_sf`, reads is common shapefiles
+- `my_land_map`, adds a land map to ggplot2
+
