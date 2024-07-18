@@ -46,22 +46,25 @@ my_project <- function(Repo = "one_drive"){
     if(dir.exists("~/Library/CloudStorage/OneDrive-UBC/Data/") == TRUE){
       
       # Main project repo
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/",Project,sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,sep=""))
       
       # Main Data repo for project
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/data/",Project,"/data",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/data",sep=""))
       
       # Spatial data repo
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/data/",Project,"/data/spatial",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/data/spatial",sep=""))
       
       # Species data repo
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/data/",Project,"/data/species",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/data/species",sep=""))
       
       # Raw results 
-      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/data/",Project,"/results/",sep=""))
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/results/",sep=""))
       
-      # Specify the file name and location
-      file_path <- paste0("~/Library/CloudStorage/OneDrive-UBC/data/",Project,"/scripts/initial_analysis.Rmd",sep="")
+      # Figures results 
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/results/figures/",sep=""))
+      
+      # Tables results 
+      dir.create(paste("~/Library/CloudStorage/OneDrive-UBC/Data/",Project,"/results/tables/",sep=""))
       
       
     }else{
