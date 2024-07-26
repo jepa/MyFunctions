@@ -8,6 +8,7 @@ my_path(
   path_type,
   extra_path = "",
   name = "",
+  list_files = "NA",
   repo = TRUE,
   read = FALSE,
   header = TRUE,

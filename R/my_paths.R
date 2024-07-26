@@ -13,7 +13,7 @@
 #' @param system If you want to override the automatic system identification
 #' @return Paths to save and load data within a project
 #' @export
-my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALSE, header=TRUE, project = TRUE, system = NA){
+my_path <- function(path_type, extra_path= "", name = "", list_files ="NA", repo = TRUE, read=FALSE, header=TRUE, project = TRUE, system = NA){
   
   # Overrride automati path
   if(is.na(system)){
@@ -25,13 +25,13 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
   # Main path where I store my data
   if(user== "juliano"){
     Main_Path <- "/Volumes/Enterprise/Data" # jepa88 (pre-selected)
-    }
-    if(user == "jepa88"){
-      Main_Path <- "~/Library/CloudStorage/OneDrive-UBC/Data/"
-    }
+  }
+  if(user == "jepa88"){
+    Main_Path <- "~/Library/CloudStorage/OneDrive-UBC/Data/"
+  }
   if(user == "drobo"){
-      Main_Path <- "/Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
-    }
+    Main_Path <- "/Volumes/DATA/JULIANO_NEYMAR" #If Drobo is needed
+  }
   
   # Automatically sets the project name
   if(project == TRUE){
@@ -61,7 +61,7 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
   if(path_type%in% c("F","f","Figures","Figure","figure","figures")){
     Path <- "./Figures"
   }
-
+  
   # Error messages for misspelled variables
   Options = c("R","Results","D","Data","G","Generic","F","Figures","Spa","Spatial","Spp","Species")
   if(!path_type %in% Options){
@@ -79,7 +79,7 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
       My_Path <- readxl::read_excel(My_Path) %>% janitor::clean_names()
     }
     if(stringr::str_detect(name,".csv") == TRUE){
-    My_Path <- data.table::fread(My_Path, header=header) %>% janitor::clean_names()
+      My_Path <- data.table::fread(My_Path, header=header) %>% janitor::clean_names()
     }
     if(stringr::str_detect(name,"txt") == TRUE){
       My_Path <- data.table::fread(My_Path, header=header) %>% janitor::clean_names()
@@ -97,11 +97,32 @@ my_path <- function(path_type, extra_path= "", name = "", repo = TRUE, read=FALS
     
     
   }else{
-    My_Path <- paste(Path,extra_path,name,sep="/")
-    # Fix any double // in the path
-    My_Path<- gsub("//","/",My_Path) 
+    if(list_files == "names"){
+      My_Path <- paste(Path,extra_path,name,sep="/")
+      # Fix any double // in the path
+      My_Path <- gsub("//","/",My_Path)
+      
+      My_Path <- list.files(My_Path,full.names = F)
+      
+    }else{
+      My_Path <- paste(Path,extra_path,name,sep="/")
+      # Fix any double // in the path
+      My_Path<- gsub("//","/",My_Path) 
+    }
+    
+    if(list_files == "paths"){
+      My_Path <- paste(Path,extra_path,name,sep="/")
+      # Fix any double // in the path
+      My_Path <- gsub("//","/",My_Path)
+      
+      My_Path <- list.files(My_Path,full.names = T)
+    }else{
+      My_Path <- paste(Path,extra_path,name,sep="/")
+      # Fix any double // in the path
+      My_Path<- gsub("//","/",My_Path) 
+    }
+    
   }
-  
   # Function returns the selected path
   
   return(My_Path)
