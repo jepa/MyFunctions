@@ -34,7 +34,7 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   root_path <- paste(Main_Path,"/Spatial/",sep="")
   
   # Error messages for misspelled variables
-  Options = c("SAU","FAO","LME","Arctic_LME","MEOW","RFMO","RFMO_tuna")
+  Options = c("sau","fap","lme","arctic_lme","meow","rfmo","rfmo_tuna", "dbem")
   if(!sf_name %in% Options){
     print("Data type value not accepted. Current acceptable options:")
     print(Options)
@@ -43,34 +43,39 @@ my_sf <- function(sf_name, crs = "NA", simple = "NA", system = NA){
   
   
   # Get partial path for data
-  if(sf_name == "FAO"){
+  if(sf_name == "fao"){
     
     read_path <- "https://www.fao.org/fishery/geoserver/fifao/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=fifao:FAO_AREAS_CWP_NOCOASTLINE"
   }
   
-  if(sf_name == "SAU"){
+  if(sf_name == "sau"){
     
     read_path <- paste0(root_path,"SAU/SAU_Shapefile/SAUEEZ_July2015.shp")
   }
   
-  if(sf_name == "MEOW"){
+  if(sf_name == "meow"){
     
     read_path <- paste0(root_path,"MEOW/meow_ecos.shp")
   }
   
-  if(sf_name == "Arctic_LME"){
+  if(sf_name == "arctic_lme"){
     
     read_path <- paste0(root_path,"LME_boundaries_2014/LME_2013_polygon.shp")
   }
   
-  if(sf_name == "RFMO"){
+  if(sf_name == "rfmo"){
     
     read_path <- paste0(root_path,"SAU/SAU_RFMO/SAU_RFMO_Sept_2015.shp")
   }
   
-  if(sf_name == "RFMO_tuna"){
+  if(sf_name == "rfmo_tuna"){
     
     read_path <- paste0(root_path,"SAU/SAU_RFMO_TUNA/tuna_rfmo.shp")
+  }
+  
+  if(sf_name == "dbem"){
+    
+    read_path <- paste0(root_path,"DBEM/dbem_sf/dbem_sf.shp")
   }
   
   # Set projection options
