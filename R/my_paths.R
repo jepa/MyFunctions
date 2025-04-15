@@ -9,11 +9,13 @@
 #' @param extra_path Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. project/SubFolder -
 #' @param name Dataset name in case you want the option to load data
 #' @param repo Normally set to jepa88 but if connection to Drobo is available use repo = "FALSE"
+#' @param list_files returns the list of files if set to "names"
+#' @param fn full names for list of files set to F
 #' @param read Default read = FALSE. read = FALSE will only return a path wile read = TURE will read a dataset
 #' @param system If you want to override the automatic system identification
 #' @return Paths to save and load data within a project
 #' @export
-my_path <- function(path_type, extra_path= "", name = "", list_files ="NA", repo = TRUE, read=FALSE, header=TRUE, project = TRUE, system = NA){
+my_path <- function(path_type, extra_path= "", name = "", list_files ="NA", fn = F, repo = TRUE, read=FALSE, header=TRUE, project = TRUE, system = NA){
   
   # Overrride automati path
   if(is.na(system)){
@@ -102,7 +104,7 @@ my_path <- function(path_type, extra_path= "", name = "", list_files ="NA", repo
       # Fix any double // in the path
       My_Path <- gsub("//","/",My_Path)
       
-      My_Path <- list.files(My_Path,full.names = F)
+      My_Path <- list.files(My_Path,full.names = fn)
       
     }else{
       My_Path <- paste(Path,extra_path,name,sep="/")
@@ -115,7 +117,7 @@ my_path <- function(path_type, extra_path= "", name = "", list_files ="NA", repo
       # Fix any double // in the path
       My_Path <- gsub("//","/",My_Path)
       
-      My_Path <- list.files(My_Path,full.names = T)
+      My_Path <- list.files(My_Path,full.names = fn)
     }else{
       My_Path <- paste(Path,extra_path,name,sep="/")
       # Fix any double // in the path
