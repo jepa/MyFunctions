@@ -9,6 +9,7 @@ my_path(
   extra_path = "",
   name = "",
   list_files = "NA",
+  fn = F,
   repo = TRUE,
   read = FALSE,
   header = TRUE,
@@ -22,6 +23,10 @@ my_path(
 \item{extra_path}{Any sub-path to add WITHIN the folders. Note, if it is before, include it on the "Folder" parameter -e.g. project/SubFolder -}
 
 \item{name}{Dataset name in case you want the option to load data}
+
+\item{list_files}{returns the list of files if set to "names"}
+
+\item{fn}{full names for list of files set to F}
 
 \item{repo}{Normally set to jepa88 but if connection to Drobo is available use repo = "FALSE"}
 
