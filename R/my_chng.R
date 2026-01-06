@@ -9,14 +9,18 @@
 #' @export
 
 my_chng <- function(v1, v2, limit = NA){
-
+  
   # Estimate percentage change
-    x = ((v2-v1)/abs(v1))*100
-    
-    # Set scale limits if necessary
-    if(!is.na(limit)){
-      x <- ifelse(abs(x) > limit, limit, x)
-    } 
-
+  x <- ifelse(v1 == 0 & v2 > 0, 100,
+              ifelse(v1 > 0 & v2 == 0, -100,
+                      ((v2 - v1) / abs(v1)) * 100)
+              )
+  
+  
+  # Set scale limits if necessary
+  if(!is.na(limit)){
+    x <- ifelse(abs(x) > limit, limit, x)
+  } 
+  
   return(x)
 }
