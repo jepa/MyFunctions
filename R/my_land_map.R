@@ -6,7 +6,7 @@
 #' @param sacel level of map detail, options include small, medium and large
 #' @export
 
-my_land_map <- function(scale = "small",crs = 4326, fill = "grey30", color = "grey70", country_selection = NA, country_options = F){
+my_land_map <- function(scale = "small",crs = 4326, fill = "grey30", color = "grey70", country_selection = NA, country_options = F, flip_map = F){
   
   if(country_options == T ){
   
@@ -29,6 +29,13 @@ my_land_map <- function(scale = "small",crs = 4326, fill = "grey30", color = "gr
       st_set_crs(4326) %>% 
       st_transform(crs = crs)
   }
+  
+  
+  if(flip_map == T){
+    map_df <- map_df %>% 
+      st_shift_longitude()
+  }
+  
   
   map <- ggplot2::geom_sf(data = map_df,
                           aes(),
