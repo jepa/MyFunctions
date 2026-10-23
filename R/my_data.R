@@ -45,27 +45,27 @@ my_data <- function(data, system = "NA"){
   
   if(data == "sau_index"){
     
-    df_return <-  my_path("Spa","SAU", "sau_index.csv", read = TRUE) %>% 
+    df_return <-  my_path("Spa","SAU", "sau_index.csv", read = TRUE, system = user) %>% 
       clean_names()
     
   }
   
   if(data == "sau_species"){
     
-    df_return <- my_path("Spp", name ="exploited_species_list.csv",read = T, header = T)
+    df_return <- my_path("Spp", name ="exploited_species_list.csv",read = T, header = T,system = user)
 
   }
   
   if(data == "dbem_species"){
     
-    df_return <- my_path("Spp", name ="dbem_spp_list.csv",read = T, header = T)
+    df_return <- my_path("Spp", name ="dbem_spp_list.csv",read = T, header = T,system = user)
     
   }
   
   # DBEM - related data
   if(data == "dbem_coords"){
     
-    df_return <- my_path("Spa","DBEM","Lon_Lat_DBEM.txt",read = T, header = F)
+    df_return <- my_path("Spa","DBEM","Lon_Lat_DBEM.txt",read = T, header = F,system = user)
     colnames(df_return) <- c("index","lon","lat")
     
   }
